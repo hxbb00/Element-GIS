@@ -1,0 +1,119 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels"
+             xmlns:dialogHost="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
+             xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
+             xmlns:models="clr-namespace:Neumorphism.Avalonia.Demo.Models"
+             x:CompileBindings="True"
+             x:DataType="viewModels:DialogsDemoViewModel"
+             x:Class="Neumorphism.Avalonia.Demo.Pages.DialogsDemo">
+  
+
+
+
+
+    <StackPanel Margin="20" >
+        <TextBlock Classes="Headline4 Subheadline" Text="Dialogs" Foreground="{DynamicResource MaterialDesignDarkGray}" />
+        <Grid ColumnDefinitions="*,*" RowDefinitions="*">
+
+            <Grid RowDefinitions="Auto,*">
+                <TextBlock Grid.Row="0" Classes="Headline6 Subheadline2" Text="DialogHost (fake popup window)" Foreground="{DynamicResource MaterialDesignMediumGray}" />
+                <StackPanel Grid.Row="1" VerticalAlignment="Stretch">
+                  <Grid RowDefinitions="*,28">
+                    <Button Grid.Row="0" Width="NaN" Margin="20" VerticalAlignment="Center" Height="32" Command="{CompiledBinding OpenDialogWithViewCommand}">Open dialog from view</Button>
+                    <TextBlock Grid.Row="1"
+                                   HorizontalAlignment="Center"
+                                   TextWrapping="Wrap"
+                                   Text="{CompiledBinding OpenDialogWithViewResult}"
+                                   IsVisible="{CompiledBinding OpenDialogWithViewResult, Converter={x:Static StringConverters.IsNotNullOrEmpty}, FallbackValue=False}" />
+                  </Grid>
+
+                  <Grid RowDefinitions="*,28">
+                    <Button Grid.Row="0" Width="NaN" Margin="20" VerticalAlignment="Center" Height="32" Command="{CompiledBinding OpenDialogWithModelCommand}">Open dialog from model</Button>
+                    <TextBlock Grid.Row="1"
+                                   HorizontalAlignment="Center"
+                                   TextWrapping="Wrap"
+                                   Text="{CompiledBinding OpenDialogWithModelResult}"
+                                   IsVisible="{CompiledBinding OpenDialogWithModelResult, Converter={x:Static StringConverters.IsNotNullOrEmpty}, FallbackValue=False}" />
+                  </Grid>
+                </StackPanel>
+            </Grid>
+
+            <StackPanel Grid.Column="1" >
+                <TextBlock Classes="Headline6 Subheadline2" Text="Builder dialogs (real child windows)" Foreground="{DynamicResource MaterialDesignMediumGray}" />
+
+                  <StackPanel Orientation="Vertical">
+                    <!--****************************************************************-->
+                    <showMeTheXaml:XamlDisplay UniqueId="BuilderDialog1">
+                      <Grid RowDefinitions="*,28" Margin="8" DataContext="{CompiledBinding InfoDialog}">
+                        <Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="NaN" Height="38" />
+                        <TextBlock Grid.Row="1" Margin="8"
+                                   HorizontalAlignment="Center"
+                                   TextWrapping="Wrap"
+                                   Text="{CompiledBinding Result}"
+                                   IsVisible="{CompiledBinding Result, Converter={x:Static StringConverters.IsNotNullOrEmpty}, FallbackValue=False}" />
+                      </Grid>
+                    </showMeTheXaml:XamlDisplay>
+                    <!--****************************************************************-->
+                    <showMeTheXaml:XamlDisplay UniqueId="BuilderDialog2">
+                      <Grid RowDefinitions="*,28" Margin="8" DataContext="{CompiledBinding ConfirmDialog}">
+                        <Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="NaN" Height="38" />
+                        <TextBlock Grid.Row="1" Margin="8"
+                                   HorizontalAlignment="Center"
+                                   TextWrapping="Wrap"
+                                   Text="{CompiledBinding Result}"
+                                   IsVisible="{CompiledBinding Result, Converter={x:Static StringConverters.IsNotNullOrEmpty}, FallbackValue=False}" />
+                      </Grid>
+                    </showMeTheXaml:XamlDisplay>
+                    <!--****************************************************************-->
+                    <showMeTheXaml:XamlDisplay UniqueId="BuilderDialog3">
+                      <Grid RowDefinitions="*,28" Margin="8" DataContext="{CompiledBinding ConfirmSequenceDialog}">
+		                    <Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="NaN" Height="38" />
+		                    <TextBlock Grid.Row="1" Margin="8"
+					                    HorizontalAlignment="Center"
+					                    TextWrapping="Wrap"
+					                    Text="{CompiledBinding Result}"
+					                    IsVisible="{CompiledBinding Result, Converter={x:Static StringConverters.IsNotNullOrEmpty}, FallbackValue=False}" />
+	                    </Grid>
+                    </showMeTheXaml:XamlDisplay>
+                    <!--****************************************************************-->
+                    <showMeTheXaml:XamlDisplay UniqueId="BuilderDialog4">
+                      <Grid RowDefinitions="*,28" Margin="8" DataContext="{CompiledBinding ImageDialog}">
+                        <Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="NaN" Height="38" />
+	                      <TextBlock Grid.Row="1" Margin="8"
+				                      HorizontalAlignment="Center"
+				                      TextWrapping="Wrap"
+				                      Text="{CompiledBinding Result}"
+				                      IsVisible="{CompiledBinding Result, Converter={x:Static StringConverters.IsNotNullOrEmpty}, FallbackValue=False}" />
+                        </Grid>
+                    </showMeTheXaml:XamlDisplay>
+					          <!--****************************************************************-->
+                    <showMeTheXaml:XamlDisplay UniqueId="BuilderDialog5">
+                      <Grid RowDefinitions="*,28" Margin="8" DataContext="{CompiledBinding LoginDialog}">
+							          <Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="NaN" Height="38" />
+							          <TextBlock Grid.Row="1" Margin="8"
+										          HorizontalAlignment="Center"
+										          TextWrapping="Wrap"
+										          Text="{CompiledBinding Result}"
+										          IsVisible="{CompiledBinding Result, Converter={x:Static StringConverters.IsNotNullOrEmpty}, FallbackValue=False}" />
+						          </Grid>
+					          </showMeTheXaml:XamlDisplay>
+					          <!--****************************************************************-->
+					          <showMeTheXaml:XamlDisplay UniqueId="BuilderDialog6">
+                      <Grid RowDefinitions="*,28" Margin="8" DataContext="{CompiledBinding FolderNameDialog}">
+							          <Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="NaN" Height="38" />
+							          <TextBlock Grid.Row="1" Margin="8"
+										          HorizontalAlignment="Center"
+										          TextWrapping="Wrap"
+										          Text="{CompiledBinding Result}"
+										          IsVisible="{CompiledBinding Result, Converter={x:Static StringConverters.IsNotNullOrEmpty}, FallbackValue=False}" />
+						          </Grid>
+					          </showMeTheXaml:XamlDisplay>
+					          <!--****************************************************************-->
+				          </StackPanel>
+              </StackPanel>
+        </Grid>
+    </StackPanel>
+
+
+</UserControl>

@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Element.GIS", "Element.GIS\Element.GIS.csproj", "{EBED7DC9-3C39-4280-AAFC-C79DB8060B65}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Themes", "Themes", "{9C28527D-4B39-4B7F-AD72-95E52EF08FB8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.Themes.Neumorphism", "Avalonia.Themes.Neumorphism\Avalonia.Themes.Neumorphism.csproj", "{707804FD-56AA-48D9-8860-5C856AF6ADCD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBED7DC9-3C39-4280-AAFC-C79DB8060B65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBED7DC9-3C39-4280-AAFC-C79DB8060B65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBED7DC9-3C39-4280-AAFC-C79DB8060B65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBED7DC9-3C39-4280-AAFC-C79DB8060B65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{707804FD-56AA-48D9-8860-5C856AF6ADCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{707804FD-56AA-48D9-8860-5C856AF6ADCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{707804FD-56AA-48D9-8860-5C856AF6ADCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{707804FD-56AA-48D9-8860-5C856AF6ADCD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{707804FD-56AA-48D9-8860-5C856AF6ADCD} = {9C28527D-4B39-4B7F-AD72-95E52EF08FB8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3632FE16-3537-4FF2-8832-548C9365F228}
+	EndGlobalSection
+EndGlobal
