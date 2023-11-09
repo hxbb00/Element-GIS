@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Element.GIS.Plug
+namespace Element.GIS.Fx.Plug
 {
     public interface IPlug
     {

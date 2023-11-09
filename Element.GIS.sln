@@ -9,6 +9,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Themes", "Themes", "{9C2852
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.Themes.Neumorphism", "Avalonia.Themes.Neumorphism\Avalonia.Themes.Neumorphism.csproj", "{707804FD-56AA-48D9-8860-5C856AF6ADCD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{8B20B25E-A3E7-4C24-A053-E95784F45983}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Element.GIS.Plugin.DataConverter", "Element.GIS.Plugin.DataConverter\Element.GIS.Plugin.DataConverter.csproj", "{7BEADD77-50B9-494C-892B-59B29BBBAFAD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{12715C0B-4145-4A22-96F6-0136F02784EF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Element.GIS.Module.DataConverter", "Element.GIS.Module.DataConverter\Element.GIS.Module.DataConverter.csproj", "{45CD74E1-62B9-48F6-9664-9C19624E590C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Element.GIS.Fx", "Element.GIS.Fx\Element.GIS.Fx.csproj", "{0EBF1853-6FDF-4D4F-BDC8-3FEDFDEA8D24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +33,26 @@ Global
 		{707804FD-56AA-48D9-8860-5C856AF6ADCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{707804FD-56AA-48D9-8860-5C856AF6ADCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{707804FD-56AA-48D9-8860-5C856AF6ADCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BEADD77-50B9-494C-892B-59B29BBBAFAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BEADD77-50B9-494C-892B-59B29BBBAFAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BEADD77-50B9-494C-892B-59B29BBBAFAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BEADD77-50B9-494C-892B-59B29BBBAFAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45CD74E1-62B9-48F6-9664-9C19624E590C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45CD74E1-62B9-48F6-9664-9C19624E590C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45CD74E1-62B9-48F6-9664-9C19624E590C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45CD74E1-62B9-48F6-9664-9C19624E590C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EBF1853-6FDF-4D4F-BDC8-3FEDFDEA8D24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EBF1853-6FDF-4D4F-BDC8-3FEDFDEA8D24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EBF1853-6FDF-4D4F-BDC8-3FEDFDEA8D24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EBF1853-6FDF-4D4F-BDC8-3FEDFDEA8D24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{707804FD-56AA-48D9-8860-5C856AF6ADCD} = {9C28527D-4B39-4B7F-AD72-95E52EF08FB8}
+		{7BEADD77-50B9-494C-892B-59B29BBBAFAD} = {8B20B25E-A3E7-4C24-A053-E95784F45983}
+		{45CD74E1-62B9-48F6-9664-9C19624E590C} = {12715C0B-4145-4A22-96F6-0136F02784EF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3632FE16-3537-4FF2-8832-548C9365F228}

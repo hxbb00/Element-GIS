@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Element.GIS.Logs
+namespace Element.GIS.Fx.ALogs
 {
     public class ElementLogger
     {

@@ -356,3 +356,4 @@ MigrationBackup/
 .idea/
 #Ignore special
 .directory
+dist-bin/

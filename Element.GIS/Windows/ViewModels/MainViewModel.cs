@@ -1,9 +1,6 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Themes.Neumorphism.Enums;
-using Element.GIS.Plug;
 using Neumorphism.Avalonia.Demo.Interfaces;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Neumorphism.Avalonia.Demo.Windows.ViewModels
 {

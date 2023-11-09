@@ -4,10 +4,9 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Styling;
 using Avalonia.Themes.Neumorphism.Controls;
 using Avalonia.Themes.Neumorphism.Enums;
-using Element.GIS.Plug;
+using Element.GIS.Fx.Plug;
 using Neumorphism.Avalonia.Demo.Interfaces;
 using Neumorphism.Avalonia.Demo.ViewModels;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 

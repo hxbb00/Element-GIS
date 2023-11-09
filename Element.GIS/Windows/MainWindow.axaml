@@ -97,7 +97,7 @@
 								<Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="avares://Element.GIS/Assets/Banner.png" Stretch="None" Width="320" Height="210" Margin="0,0,0,8" Opacity="1" />
 							</controls:ColorZone>
 							<ListBox ItemsSource="{Binding PlugItems}"
-								 Grid.Row="1" Name="DrawerPlugList">
+								 Grid.Row="1" Name="DrawerPlugList" Focusable="{Binding ElementName=LeftDrawer, Path=LeftDrawerOpened}">
 								<ListBox.Styles>
 									<Style Selector="ListBoxItem">
 										<Setter Property="Height" Value="48" />
@@ -114,122 +114,6 @@
 										</StackPanel>
 									</DataTemplate>
 								</ListBox.ItemTemplate>
-							</ListBox>
-							<ListBox Grid.Row="1" Name="DrawerList2" Focusable="{Binding ElementName=LeftDrawer, Path=LeftDrawerOpened}">
-								<ListBox.Styles>
-									<Style Selector="ListBoxItem">
-										<Setter Property="Height" Value="48" />
-										<Setter Property="Padding" Value="16,0" />
-										<Setter Property="VerticalContentAlignment" Value="Center" />
-										<Setter Property="IsEnabled" Value="{Binding $self.IsEnabled}" />
-									</Style>
-								</ListBox.Styles>
-								<ListBoxItem IsEnabled="True">
-									<StackPanel Orientation="Horizontal">
-										<icons:MaterialIcon Kind="HomeOutline" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-										<TextBlock Text="Home" VerticalAlignment="Center" Margin="8,0,0,0" />
-									</StackPanel>
-								</ListBoxItem>
-
-								<ListBoxItem IsEnabled="True">
-									<StackPanel Orientation="Horizontal">
-										<icons:MaterialIcon Kind="ButtonPointer" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-										<TextBlock Text="Buttons" VerticalAlignment="Center" Margin="8,0,0,0" />
-									</StackPanel>
-								</ListBoxItem>
-
-								<ListBoxItem IsEnabled="True">
-									<StackPanel Orientation="Horizontal">
-										<icons:MaterialIcon Kind="ToggleSwitchOutline" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-										<TextBlock Text="Toggles" VerticalAlignment="Center" Margin="8,0,0,0" />
-									</StackPanel>
-								</ListBoxItem>
-
-								<ListBoxItem IsEnabled="True">
-									<StackPanel Orientation="Horizontal">
-										<icons:MaterialIcon Kind="FormTextbox" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-										<TextBlock Text="TextBoxes" VerticalAlignment="Center" Margin="8,0,0,0" />
-									</StackPanel>
-								</ListBoxItem>
-
-								<ListBoxItem IsEnabled="True">
-									<StackPanel Orientation="Horizontal">
-										<icons:MaterialIcon Kind="FormDropdown" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-										<TextBlock Text="ComboBoxes" VerticalAlignment="Center" Margin="8,0,0,0" />
-									</StackPanel>
-								</ListBoxItem>
-
-								<ListBoxItem IsEnabled="True">
-									<StackPanel Orientation="Horizontal">
-										<icons:MaterialIcon Kind="ElectricSwitchClosed" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-										<TextBlock Text="Sliders" VerticalAlignment="Center" Margin="8,0,0,0" />
-									</StackPanel>
-								</ListBoxItem>
-
-								<ListBoxItem IsEnabled="True">
-									<StackPanel Orientation="Horizontal">
-										<icons:MaterialIcon Kind="Poll" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-										<TextBlock Text="Progress" VerticalAlignment="Center" Margin="8,0,0,0" />
-									</StackPanel>
-								</ListBoxItem>
-
-								<ListBoxItem IsEnabled="True">
-									<StackPanel Orientation="Horizontal">
-										<icons:MaterialIcon Kind="ImageOutline" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-										<TextBlock Text="Icons" VerticalAlignment="Center" Margin="8,0,0,0" />
-									</StackPanel>
-								</ListBoxItem>
-
-
-								<ListBoxItem IsEnabled="True">
-									<StackPanel Orientation="Horizontal">
-										<icons:MaterialIcon Kind="Drawing" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-										<TextBlock Text="Drawings" VerticalAlignment="Center" Margin="8,0,0,0" />
-									</StackPanel>
-								</ListBoxItem>
-
-								<ListBoxItem IsEnabled="True">
-									<StackPanel Orientation="Horizontal">
-										<icons:MaterialIcon Kind="CardTextOutline" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-										<TextBlock Text="Cards" VerticalAlignment="Center" Margin="8,0,0,0" />
-									</StackPanel>
-								</ListBoxItem>
-
-								<ListBoxItem IsEnabled="True">
-									<StackPanel Orientation="Horizontal">
-										<icons:MaterialIcon Kind="ListBoxOutline" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-										<TextBlock Text="Lists" VerticalAlignment="Center" Margin="8,0,0,0" />
-									</StackPanel>
-								</ListBoxItem>
-
-								<ListBoxItem IsEnabled="True">
-									<StackPanel Orientation="Horizontal">
-										<icons:MaterialIcon Kind="Tab" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-										<TextBlock Text="Tabs" VerticalAlignment="Center" Margin="8,0,0,0" />
-									</StackPanel>
-								</ListBoxItem>
-
-								<ListBoxItem IsEnabled="True">
-									<StackPanel Orientation="Horizontal">
-										<icons:MaterialIcon Kind="DateRange" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-										<TextBlock Text="DateTime pickers" VerticalAlignment="Center" Margin="8,0,0,0" />
-									</StackPanel>
-								</ListBoxItem>
-
-								<ListBoxItem IsEnabled="True">
-									<StackPanel Orientation="Horizontal">
-										<icons:MaterialIcon Kind="Menu" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-										<TextBlock Text="Menus" VerticalAlignment="Center" Margin="8,0,0,0" />
-									</StackPanel>
-								</ListBoxItem>
-
-								<!--<ListBoxItem IsEnabled="True">
-				  <StackPanel Orientation="Horizontal">
-					<icons:MaterialIcon Kind="WindowMaximize" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-					<TextBlock Text="Dialogs" VerticalAlignment="Center" Margin="8,0,0,0" />
-				  </StackPanel>
-				</ListBoxItem>-->
-
 							</ListBox>
 						</Grid>
 					</controls:NavigationDrawer.LeftDrawerContent>
@@ -294,34 +178,8 @@
 									</Carousel.Styles>
 									<!-- Main page -->
 									<pages:Home />
-									<!--Buttons-->
-									<pages:ButtonsDemo/>
-									<!--Toggles-->
-									<pages:TogglesDemo/>
-									<!--Fields-->
-									<pages:FieldsDemo/>
-									<!--ComboBoxes-->
-									<pages:ComboBoxesDemo/>
-									<!--Sliders-->
-									<pages:SlidersDemo/>
-									<!-- Progressbars -->
-									<pages:ProgressBarsDemo />
-									<!--Icons-->
-									<pages:IconsDemo/>
-									<!--Drawings-->
-									<pages:DrawingsDemo/>
 									<!--Cards-->
-									<pages:CardsDemo/>
-									<!--Lists-->
-									<pages:ListsDemo/>
-									<!--Tabs-->
-									<pages:TabsDemo/>
-									<!--DatetimePickers-->
-									<pages:DateTimePickersDemo/>
-									<!--Menus-->
-									<pages:MenusDemo/>
-									<!--Dialogs-->
-									<!--<pages:DialogsDemo/>-->
+									<pages:CardsDemo Name="cardsPage"/>
 								</Carousel>
 							</Border>
 						</ScrollViewer>

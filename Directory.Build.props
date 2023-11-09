@@ -1,0 +1,10 @@
+<Project>
+	<PropertyGroup>
+		<OnCI>false</OnCI>
+	</PropertyGroup>
+
+	<Target Name="PostBuildPlugin" AfterTargets="PostBuildEvent" Condition="'$(OutputType)' != 'exe'">
+		<Exec Command="call xcopy /y /f /r &quot;$(TargetPath)&quot; &quot;$(SolutionDir)dist-bin/&quot;" />
+	</Target>
+
+</Project>

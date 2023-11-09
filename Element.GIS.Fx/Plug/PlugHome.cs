@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
 
-namespace Element.GIS.Plug
+namespace Element.GIS.Fx.Plug
 {
     /// <summary>
     /// 主页

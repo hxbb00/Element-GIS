@@ -6,11 +6,9 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Styling;
 using Avalonia.Themes.Neumorphism.Controls;
-using Element.GIS.Plug;
 using Neumorphism.Avalonia.Demo.Interfaces;
+using Neumorphism.Avalonia.Demo.Pages;
 using Neumorphism.Avalonia.Demo.Windows.ViewModels;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Neumorphism.Avalonia.Demo.Windows
 {
@@ -21,9 +19,11 @@ namespace Neumorphism.Avalonia.Demo.Windows
         #region Control fields
 
         private ToggleButton NavDrawerSwitch => this.GetControl<ToggleButton>("NavDrawerSwitch2");
-        private ListBox DrawerList => this.GetControl<ListBox>("DrawerList2");
+        private ListBox DrawerList => this.GetControl<ListBox>("DrawerPlugList");
         private Carousel PageCarousel => this.GetControl<Carousel>("PageCarousel2");
         private ScrollViewer mainScroller => this.GetControl<ScrollViewer>("mainScroller2");
+
+        private CardsDemo mainCards => this.GetControl<CardsDemo>("cardsPage");
 
         #endregion
 
@@ -34,12 +34,12 @@ namespace Neumorphism.Avalonia.Demo.Windows
             InitializeComponent(window);
         }
 
-        IThemeSwitch IMainWindow.ThemeSwitch => (IThemeSwitch)this._app!;
-        IMainWindowState IMainWindow.Model => (IMainWindowState)this.DataContext;
+        IThemeSwitch IMainWindow.ThemeSwitch => (IThemeSwitch)_app!;
+        IMainWindowState IMainWindow.Model => (IMainWindowState)DataContext;
         PixelPoint IMainWindow.Position => Utilities.GetWindowPosition(this);
-        Size IMainWindow.ClientSize => this.ClientSize;
-        Size? IMainWindow.FrameSize => this.FrameSize;
-        WindowState IMainWindow.State => this.WindowState;
+        Size IMainWindow.ClientSize => ClientSize;
+        Size? IMainWindow.FrameSize => FrameSize;
+        WindowState IMainWindow.State => WindowState;
 
         private void InitializeComponent(IMainWindow window)
         {
@@ -65,12 +65,12 @@ namespace Neumorphism.Avalonia.Demo.Windows
 
             if (window is not null)
             {
-                this.WindowStartupLocation = WindowStartupLocation.Manual;
-                this.PageCarousel.SelectedIndex = window.Model != null ? window.Model.CurrentPageIndex : 0;
-                this.WindowState = window.State;
-                this.Position = window.Position;
-                this.FrameSize = window.FrameSize;
-                this.ClientSize = window.ClientSize;
+                WindowStartupLocation = WindowStartupLocation.Manual;
+                PageCarousel.SelectedIndex = window.Model != null ? window.Model.CurrentPageIndex : 0;
+                WindowState = window.State;
+                Position = window.Position;
+                FrameSize = window.FrameSize;
+                ClientSize = window.ClientSize;
             }
 
 
@@ -103,10 +103,10 @@ namespace Neumorphism.Avalonia.Demo.Windows
                 return;
             try
             {
-                PageCarousel.SelectedIndex = listBox.SelectedIndex;
+                PageCarousel.SelectedIndex = listBox.SelectedIndex == 0 ? 0 : 1;
                 mainScroller.Offset = Vector.Zero;
                 mainScroller.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
-                ((IMainWindowState)this.DataContext).CurrentPageIndex = listBox.SelectedIndex;
+                ((IMainWindowState)DataContext).CurrentPageIndex = listBox.SelectedIndex;
             }
             catch
             {

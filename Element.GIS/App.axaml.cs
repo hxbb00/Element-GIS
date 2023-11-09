@@ -30,13 +30,13 @@ namespace Neumorphism.Avalonia.Demo
             base.OnFrameworkInitializationCompleted();
         }
 
-        ApplicationTheme IThemeSwitch.Current => this._currentTheme;
+        ApplicationTheme IThemeSwitch.Current => _currentTheme;
 
 
 
         void IThemeSwitch.ChangeTheme(ApplicationTheme theme)
         {
-            if (theme == this._currentTheme)
+            if (theme == _currentTheme)
                 return;
 
             _currentTheme = theme;

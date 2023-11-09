@@ -1,4 +1,4 @@
-﻿using Element.GIS.Logs;
+﻿using Element.GIS.Fx.ALogs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
@@ -8,7 +8,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 
-namespace Element.GIS.Plug
+namespace Element.GIS.Fx.Plug
 {
     /// <summary>
     /// 插件管理器
@@ -96,7 +96,7 @@ namespace Element.GIS.Plug
         {
             var dirPath = AppDomain.CurrentDomain.BaseDirectory;
 
-            var files = Directory.EnumerateFiles(dirPath, "Element.GIS.Plug.*.dll", SearchOption.TopDirectoryOnly);
+            var files = Directory.EnumerateFiles(dirPath, "Element.GIS.Plugin.*.dll", SearchOption.TopDirectoryOnly);
             foreach (string file in files)
             {
                 string upperInvariant = file;
@@ -109,36 +109,9 @@ namespace Element.GIS.Plug
 
         private static Assembly LoadAssembly(string codeBase)
         {
-            AssemblyName assemblyName;
             try
             {
-                assemblyName = AssemblyName.GetAssemblyName(codeBase);
-            }
-            catch (ArgumentException)
-            {
-                assemblyName = new AssemblyName
-                {
-                    CodeBase = codeBase
-                };
-            }
-            catch (ReflectionTypeLoadException e0)
-            {
-                foreach (var item in e0.LoaderExceptions)
-                {
-                    ElementLogger.Error($"插件[{codeBase}]加载异常:{item}");
-                }
-                return null;
-            }
-            catch (Exception e)
-            {
-                ElementLogger.Error($"插件[{codeBase}]加载异常:{e}");
-
-                return null;
-            }
-
-            try
-            {
-                var assembly = Assembly.Load(assemblyName);
+                var assembly = Assembly.LoadFrom(codeBase);
                 assembly.GetTypes();
                 return assembly;
             }

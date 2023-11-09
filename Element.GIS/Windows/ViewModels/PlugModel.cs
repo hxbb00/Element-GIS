@@ -1,5 +1,4 @@
-﻿using Avalonia.Controls.Presenters;
-using Element.GIS.Plug;
+﻿using Element.GIS.Fx.Plug;
 
 namespace Neumorphism.Avalonia.Demo.Windows.ViewModels
 {
@@ -7,24 +6,14 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels
     {
         private readonly IPlug _elementGISPlug;
 
-        public static implicit operator PlugModel(ContentPresenter contentPresenter)
-        {
-            return new PlugModel(contentPresenter);
-        }
-
-        public PlugModel(ContentPresenter contentPresenter)
-        {
-
-        }
-
         public PlugModel(IPlug elementGISPlug)
         {
             _elementGISPlug = elementGISPlug;
         }
 
-        public string Name { get { return _elementGISPlug?.Name; } set { } }
-        public string Title { get { return _elementGISPlug?.Title; } set { } }
-        public string Description { get { return _elementGISPlug?.Description; } set { } }
-        public bool FreeUse { get { return _elementGISPlug.FreeUse; } set { } }
+        public string Name { get { return _elementGISPlug.Name; } }
+        public string Title { get { return _elementGISPlug.Title; } }
+        public string Description { get { return _elementGISPlug.Description; } }
+        public bool FreeUse { get { return _elementGISPlug.FreeUse; } }
     }
 }
