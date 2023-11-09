@@ -5,34 +5,18 @@
 		<ApplicationIcon>Assets/app.ico</ApplicationIcon>
 		<InvariantGlobalization>false</InvariantGlobalization>
 		<Nullable>disable</Nullable>
-		<AvaloniaNameGenerator>false</AvaloniaNameGenerator>
 		<LangVersion>default</LangVersion>
-		<AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<AvaloniaResource Include="Assets/**" />
-		<AvaloniaResource Include="Images/**" />
-		<AvaloniaResource Include="FxXamlDisplay.axaml" />
 		<RuntimeHostConfigurationOption Include="Switch.System.Reflection.Assembly.SimulatedCallingAssembly" Value="true" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Avalonia" Version="11.0.5" />
-		<PackageReference Include="Avalonia.Controls.ItemsRepeater" Version="11.0.5" />
-		<PackageReference Include="Avalonia.Desktop" Version="11.0.5" />
-		<PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.5" />
-		<PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.5" />
-		<PackageReference Include="DialogHost.Avalonia" Version="0.7.7" />
-		<PackageReference Include="Material.Icons.Avalonia" Version="2.0.1" />
 		<PackageReference Include="System.ComponentModel.Composition" Version="7.0.0" />
 		<PackageReference Include="Grpc.AspNetCore" Version="2.59.0" />
 	</ItemGroup>
 	<ItemGroup>
 		<Protobuf Include="Protos\greet.proto" />
 	</ItemGroup>
-	<ItemGroup>
-		<ProjectReference Include="..\Avalonia.Themes.Neumorphism\Avalonia.Themes.Neumorphism.csproj" />
-	</ItemGroup>
-
 </Project>

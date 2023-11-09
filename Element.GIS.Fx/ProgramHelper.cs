@@ -1,5 +1,4 @@
-﻿using Avalonia.Themes.Neumorphism.Controls;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
@@ -19,7 +18,7 @@ namespace Element.GIS.Fx
             }
             else
             {
-                SnackbarHost.Post($"Module:{module}, {exeName} not exists!");
+                Console.WriteLine($"Module:{module}, {exeName} not exists!");
             }
         }
 
