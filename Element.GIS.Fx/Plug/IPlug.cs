@@ -17,5 +17,7 @@ namespace Element.GIS.Fx.Plug
         string Title { get; }
         string Description { get; }
         bool FreeUse { get; }
+
+        void ButtonClick();
     }
 }

@@ -26,8 +26,11 @@
 		<PackageReference Include="DialogHost.Avalonia" Version="0.7.7" />
 		<PackageReference Include="Material.Icons.Avalonia" Version="2.0.1" />
 		<PackageReference Include="System.ComponentModel.Composition" Version="7.0.0" />
+		<PackageReference Include="Grpc.AspNetCore" Version="2.59.0" />
 	</ItemGroup>
-
+	<ItemGroup>
+		<Protobuf Include="Protos\greet.proto" />
+	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\Avalonia.Themes.Neumorphism\Avalonia.Themes.Neumorphism.csproj" />
 	</ItemGroup>

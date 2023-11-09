@@ -20,6 +20,10 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
         public string Description { get { return _elementGISPlug.Description; } }
         public bool FreeUse { get { return _elementGISPlug.FreeUse; } }
 
-        public void ButtonClick() => SnackbarHost.Post("You have clicked on the button !");
+        public void ButtonClick()
+        {
+            SnackbarHost.Post("You have clicked on the button !");
+            _elementGISPlug.ButtonClick();
+        }
     }
 }

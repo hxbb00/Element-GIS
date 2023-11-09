@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Element.GIS.Fx;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace Element.GIS.Plugin.DataConverter
     {
         public static void Main(string[] args)
         {
-
+            HostGrpcHelper.SayHelloAsync().Wait();
         }
     }
 }
