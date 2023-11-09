@@ -8,6 +8,7 @@ using Avalonia.Styling;
 using Avalonia.Themes.Neumorphism.Controls;
 using Neumorphism.Avalonia.Demo.Interfaces;
 using Neumorphism.Avalonia.Demo.Pages;
+using Neumorphism.Avalonia.Demo.ViewModels;
 using Neumorphism.Avalonia.Demo.Windows.ViewModels;
 
 namespace Neumorphism.Avalonia.Demo.Windows
@@ -103,6 +104,9 @@ namespace Neumorphism.Avalonia.Demo.Windows
                 return;
             try
             {
+                var sel1 = listBox.SelectedItem;
+                var sel2 = listBox.SelectedValue;
+                mainCards.SetSelValue(sel2 as PlugModel);
                 PageCarousel.SelectedIndex = listBox.SelectedIndex == 0 ? 0 : 1;
                 mainScroller.Offset = Vector.Zero;
                 mainScroller.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;

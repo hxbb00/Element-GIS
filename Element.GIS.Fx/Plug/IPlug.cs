@@ -8,6 +8,14 @@ namespace Element.GIS.Fx.Plug
         string Title { get; }
         string Description { get; }
         bool FreeUse { get; }
-        List<IPlug> Subs { get; }
+        List<ISubPlug> Subs { get; }
+    }
+
+    public interface ISubPlug
+    {
+        string Name { get; }
+        string Title { get; }
+        string Description { get; }
+        bool FreeUse { get; }
     }
 }

@@ -17,6 +17,6 @@ namespace Element.GIS.Fx.Plug
 
         public bool FreeUse => true;
 
-        public List<IPlug> Subs => new List<IPlug>();
+        public List<ISubPlug> Subs => new List<ISubPlug>();
     }
 }

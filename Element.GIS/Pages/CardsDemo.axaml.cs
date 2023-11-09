@@ -1,5 +1,7 @@
 ﻿using Avalonia.Controls;
 using Neumorphism.Avalonia.Demo.ViewModels;
+using Neumorphism.Avalonia.Demo.Windows.ViewModels;
+using System;
 
 namespace Neumorphism.Avalonia.Demo.Pages
 {
@@ -10,6 +12,11 @@ namespace Neumorphism.Avalonia.Demo.Pages
             InitializeComponent();
 
             DataContext = new CardsDemoViewModel();
+        }
+
+        public void SetSelValue(PlugModel plugModel)
+        {
+            ((CardsDemoViewModel)DataContext).SetSelValue(plugModel);
         }
     }
 }
