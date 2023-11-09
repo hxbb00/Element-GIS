@@ -17,7 +17,7 @@ namespace Element.GIS.gRPC
         public override Task<HelloReply> SayHello(HelloRequest request,
             ServerCallContext context)
         {
-            SnackbarHost.Post($"Saying hello to {request.Name}");
+            SnackbarHost.Post($"Saying hello to gRPC -> {request.Name}");
             _logger.LogInformation("Saying hello to {Name}", request.Name);
             return Task.FromResult(new HelloReply
             {

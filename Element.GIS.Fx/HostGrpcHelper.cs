@@ -15,6 +15,7 @@ namespace Element.GIS.Fx
                 new HelloRequest { Name = "World" });
 
             Console.WriteLine(response.Message);
+            channel.Dispose();
         }
     }
 }
