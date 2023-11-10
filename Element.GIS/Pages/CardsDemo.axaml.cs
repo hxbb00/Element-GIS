@@ -1,12 +1,14 @@
 ﻿using Avalonia.Controls;
+using Neumorphism.Avalonia.Demo.Interfaces;
 using Neumorphism.Avalonia.Demo.ViewModels;
 using Neumorphism.Avalonia.Demo.Windows.ViewModels;
 using System;
 
 namespace Neumorphism.Avalonia.Demo.Pages
 {
-    public partial class CardsDemo : UserControl
+    public partial class CardsDemo : UserControl, ICardsDemoHost
     {
+        private Carousel PageCarousel => this.GetControl<Carousel>("PageCarousel2");
         public CardsDemo()
         {
             InitializeComponent();
@@ -16,7 +18,12 @@ namespace Neumorphism.Avalonia.Demo.Pages
 
         public void SetSelValue(PlugModel plugModel)
         {
-            ((CardsDemoViewModel)DataContext).SetSelValue(plugModel);
+            ((CardsDemoViewModel)DataContext).SetSelValue(plugModel, this);
+        }
+
+        public void BeRunning(bool running)
+        {
+            PageCarousel.SelectedIndex = running ? 1 : 0;
         }
     }
 }

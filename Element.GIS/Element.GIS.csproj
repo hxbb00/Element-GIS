@@ -23,6 +23,7 @@
 		<Compile Remove="Plug\**" />
 		<EmbeddedResource Remove="Plug\**" />
 		<None Remove="Plug\**" />
+		<AvaloniaXaml Remove="Pages\CardsDemo - 复制.axaml" />
 		<AvaloniaResource Include="NeumorphismXamlDisplay.axaml" />
 		<None Update="Assets/app.icns" CopyToPublishDirectory="PreserveNewest" Condition="$(RuntimeIdentifier.StartsWith('osx'))">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -49,6 +50,12 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Avalonia.Themes.Neumorphism\Avalonia.Themes.Neumorphism.csproj" />
 		<ProjectReference Include="..\Element.GIS.Fx\Element.GIS.Fx.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Pages\CardsDemo - 复制.axaml.cs">
+	    <DependentUpon>%(Filename)</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>

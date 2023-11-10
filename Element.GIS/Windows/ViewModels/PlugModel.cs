@@ -1,4 +1,5 @@
 ﻿using Element.GIS.Fx.Plug;
+using Neumorphism.Avalonia.Demo.Interfaces;
 using Neumorphism.Avalonia.Demo.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -20,9 +21,9 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels
         public string Description { get { return _elementGISPlug.Description; } }
         public bool FreeUse { get { return _elementGISPlug.FreeUse; } }
 
-        public IEnumerable<SubPlugModel> GetSubs()
+        public IEnumerable<SubPlugModel> GetSubs(ICardsDemoHost cardsDemoHost)
         {
-            return _elementGISPlug.Subs.Select(x => new SubPlugModel(this, x));
+            return _elementGISPlug.Subs.Select(x => new SubPlugModel(this, x, cardsDemoHost));
         }
     }
 }

@@ -39,31 +39,63 @@
 				</Setter>
 			</Style>
 		</StackPanel.Styles>
+		<StackPanel Orientation="Horizontal" Margin="8" VerticalAlignment="Center">
+			<Button IsVisible="{Binding ReturnButtonIsVisible}" Theme="{StaticResource ButtonIcon}" Classes="Dark" ToolTip.Tip="返回" Command="{Binding ReturnButtonClick}">
+				<Button.Content>
+					<icons:MaterialIcon Kind="ArrowLeftBold" Width="24" Height="24" />
+				</Button.Content>
+			</Button>
+			<TextBlock Classes="Headline4 Subheadline" Text="{Binding PlugName}" Foreground="{DynamicResource MaterialDesignDarkGray}" />
 
-		<TextBlock Classes="Headline4 Subheadline" Text="{Binding PlugName}" Foreground="{DynamicResource MaterialDesignDarkGray}" />
+		</StackPanel>
+		<ScrollViewer Name="mainScroller2"
+								DockPanel.Dock="Top"
+								HorizontalContentAlignment="Stretch"
+								HorizontalAlignment="Stretch"
+								HorizontalScrollBarVisibility="Disabled">
+			<Border HorizontalAlignment="Stretch"
+				VerticalAlignment="Stretch">
+				<Carousel Name="PageCarousel2" SelectedIndex="{Binding ModeSelectedIndex}"
+					  HorizontalAlignment="Stretch">
+					<Carousel.Styles>
+						<Style Selector="Carousel#PageCarousel2:not(.no-transitions)">
+							<Setter Property="PageTransition">
+								<PageSlide Duration="0.25" SlideOutEasing="CircularEaseOut"
+									   SlideInEasing="CircularEaseOut" />
+							</Setter>
+						</Style>
+					</Carousel.Styles>
+					<!-- Main page -->
+					<StackPanel>
 
-		<TextBlock Classes="Headline6 Subheadline2" Text="请选择功能" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="0,30,0,0" />
+						<TextBlock Classes="Headline6 Subheadline2" Text="请选择功能" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="0,30,0,0" />
 
-
-		<ItemsControl ItemsSource="{Binding PlugItems}">
-			<ItemsControl.ItemsPanel>
-				<ItemsPanelTemplate>
-					<WrapPanel HorizontalAlignment="Stretch" />
-				</ItemsPanelTemplate>
-			</ItemsControl.ItemsPanel>
-			<ItemsControl.ItemTemplate>
-				<DataTemplate>
-					<controls:Card Theme="{StaticResource CardOutset}" Width="250" Height="220" VerticalAlignment="Top" ToolTip.Tip="{Binding Description}">
-						<StackPanel Orientation="Vertical" Margin="8">
-							<Image Source="avares://Element.GIS/Assets/avalonia-logo.png" Width="80" Height="80" Stretch="Uniform" />
-							<StackPanel Margin="8">
-								<TextBlock Classes="Headline6" Text="{Binding Title}" HorizontalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" />
-								<controls:FloatingButton Margin="0,8" Width="120" Height="26" Classes="Dark" IsExtended="True" ToolTip.Tip="点击开始." Command="{Binding ButtonClick}" />
-							</StackPanel>
-						</StackPanel>
-					</controls:Card>
-				</DataTemplate>
-			</ItemsControl.ItemTemplate>
-		</ItemsControl>
+						<ItemsControl ItemsSource="{Binding PlugItems}">
+							<ItemsControl.ItemsPanel>
+								<ItemsPanelTemplate>
+									<WrapPanel HorizontalAlignment="Stretch" />
+								</ItemsPanelTemplate>
+							</ItemsControl.ItemsPanel>
+							<ItemsControl.ItemTemplate>
+								<DataTemplate>
+									<controls:Card Theme="{StaticResource CardOutset}" Width="250" Height="220" VerticalAlignment="Top" ToolTip.Tip="{Binding Description}">
+										<StackPanel Orientation="Vertical" Margin="8">
+											<Image Source="avares://Element.GIS/Assets/avalonia-logo.png" Width="80" Height="80" Stretch="Uniform" />
+											<StackPanel Margin="8">
+												<TextBlock Classes="Headline6" Text="{Binding Title}" HorizontalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" />
+												<controls:FloatingButton Margin="0,8" Width="120" Height="26" Classes="Dark" IsExtended="True" ToolTip.Tip="点击开始." Command="{Binding ButtonClick}" />
+											</StackPanel>
+										</StackPanel>
+									</controls:Card>
+								</DataTemplate>
+							</ItemsControl.ItemTemplate>
+						</ItemsControl>
+					</StackPanel>
+					<!--Cards-->
+					<StackPanel>
+					</StackPanel>
+				</Carousel>
+			</Border>
+		</ScrollViewer>
 	</StackPanel>
 </UserControl>
