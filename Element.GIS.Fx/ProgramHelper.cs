@@ -22,7 +22,7 @@ namespace Element.GIS.Fx
             }
         }
 
-        public static void StartProcess(string exePath, string args)
+        public static async void StartProcess(string exePath, string args)
         {
             using (Process proc = new Process())
             {
@@ -42,7 +42,7 @@ namespace Element.GIS.Fx
                 proc.Start();//启动程序
 
                 proc.StandardInput.AutoFlush = true;
-                proc.WaitForExit();
+                await proc.WaitForExitAsync();
                 stopwatch.Stop();
                 Console.WriteLine(DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString() + ",共耗时:" + stopwatch.ElapsedMilliseconds / 1000d + "s");
                 var msg = proc.StandardOutput.ReadToEnd();
