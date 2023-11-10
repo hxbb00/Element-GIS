@@ -1,5 +1,6 @@
 ﻿using Element.GIS.Fx;
 using Element.GIS.Fx.Plug;
+using Neumorphism.Avalonia.Demo.Pages.Panels;
 
 namespace Element.GIS.Plugin.DataConverter
 {
@@ -12,6 +13,14 @@ namespace Element.GIS.Plugin.DataConverter
         public string Description => "shp 转 geojson";
 
         public bool FreeUse => true;
+
+        public object AvaloniaControl
+        {
+            get
+            {
+                return new PanelLoginDemo();
+            }
+        }
 
         public void ButtonClick()
         {

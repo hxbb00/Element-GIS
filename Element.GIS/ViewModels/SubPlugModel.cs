@@ -1,4 +1,5 @@
-﻿using Avalonia.Themes.Neumorphism.Controls;
+﻿using Avalonia.Controls;
+using Avalonia.Themes.Neumorphism.Controls;
 using Element.GIS.Fx.Plug;
 using Neumorphism.Avalonia.Demo.Interfaces;
 using Neumorphism.Avalonia.Demo.Windows.ViewModels;
@@ -34,10 +35,18 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             }
         }
 
+        public Control ContentPanel
+        {
+            get
+            {
+                return _elementGISPlug.AvaloniaControl as global::Avalonia.Controls.Control;
+            }
+        }
+
         public void ButtonClick()
         {
             Running = true;
-            _cardsDemoHost.BeRunning(Running);
+            _cardsDemoHost.BeRunning(Running, this);
         }
     }
 }

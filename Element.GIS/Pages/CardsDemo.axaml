@@ -92,7 +92,7 @@
 						</ItemsControl>
 					</StackPanel>
 					<!--Cards-->
-					<StackPanel>
+					<StackPanel Name="PlugContentPanel">
 					</StackPanel>
 				</Carousel>
 			</Border>

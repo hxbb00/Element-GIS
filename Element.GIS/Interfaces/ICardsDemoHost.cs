@@ -1,7 +1,9 @@
-﻿namespace Neumorphism.Avalonia.Demo.Interfaces
+﻿using Neumorphism.Avalonia.Demo.ViewModels;
+
+namespace Neumorphism.Avalonia.Demo.Interfaces
 {
     public interface ICardsDemoHost
     {
-        void BeRunning(bool running);
+        void BeRunning(bool running, SubPlugModel subPlug);
     }
 }
