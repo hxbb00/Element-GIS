@@ -18,6 +18,9 @@
 			<Style Selector="controls|Card">
 				<Setter Property="Margin" Value="8" />
 			</Style>
+			<Style Selector="controls|Card:pointerover">
+				<Setter Property="RenderTransform" Value="scale(1.02)"/>
+			</Style>
 			<Style Selector="controls|FloatingButton[IsExtended=true]">
 				<Setter Property="Content">
 					<Setter.Value>

@@ -104,13 +104,16 @@ namespace Neumorphism.Avalonia.Demo.Windows
                 return;
             try
             {
-                var sel1 = listBox.SelectedItem;
-                var sel2 = listBox.SelectedValue;
-                mainCards.SetSelValue(sel2 as PlugModel);
-                PageCarousel.SelectedIndex = listBox.SelectedIndex == 0 ? 0 : 1;
-                mainScroller.Offset = Vector.Zero;
-                mainScroller.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
-                ((IMainWindowState)DataContext).CurrentPageIndex = listBox.SelectedIndex;
+                if (listBox.SelectedIndex >= 0)
+                {
+                    var sel1 = listBox.SelectedItem;
+                    var sel2 = listBox.SelectedValue;
+                    mainCards.SetSelValue(sel2 as PlugModel);
+                    PageCarousel.SelectedIndex = listBox.SelectedIndex == 0 ? 0 : 1;
+                    mainScroller.Offset = Vector.Zero;
+                    mainScroller.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
+                    ((IMainWindowState)DataContext).CurrentPageIndex = listBox.SelectedIndex;
+                }
             }
             catch
             {

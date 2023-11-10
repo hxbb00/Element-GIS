@@ -7,9 +7,9 @@ namespace Element.GIS.Plugin.DataConverter
     {
         public string Name => "DataShp2GeoJsonConverter";
 
-        public string Title => "Shp转GeoJson";
+        public string Title => "shp转geojson";
 
-        public string Description => "Shp 转 GeoJson";
+        public string Description => "shp 转 geojson";
 
         public bool FreeUse => true;
 
