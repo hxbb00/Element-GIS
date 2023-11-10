@@ -12,7 +12,9 @@ namespace Element.GIS.Plugin.DataConverter
     {
         public static void Main(string[] args)
         {
-            HostGrpcHelper.SayHelloAsync().Wait();
+            var grpc = HostGrpcHelper.StartGrpc();
+            grpc.SayHelloAsync().Wait();
+            grpc.Close();
         }
     }
 }

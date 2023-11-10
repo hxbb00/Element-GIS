@@ -50,8 +50,6 @@ namespace Neumorphism.Avalonia.Demo
                 DataContext = desktop.MainWindow.DataContext;
                 desktop.Exit += (sender, args) =>
                 {
-                    GlobalHost.StopAsync(TimeSpan.FromSeconds(5)).GetAwaiter().GetResult();
-                    GlobalHost.Dispose();
                     GlobalHost = null;
                 };
             }
