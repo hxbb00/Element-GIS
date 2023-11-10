@@ -18,6 +18,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommandLineParser" Version="2.9.1" />
+		<PackageReference Include="MaxRev.Gdal.Core" Version="3.7.0.217" />
+		<PackageReference Include="MaxRev.Gdal.LinuxRuntime.Minimal" Version="3.7.0.100" />
+		<PackageReference Include="MaxRev.Gdal.WindowsRuntime.Minimal" Version="3.7.0.100" />
 		<PackageReference Include="System.ComponentModel.Composition" Version="7.0.0" />
 	</ItemGroup>
 	<ItemGroup>

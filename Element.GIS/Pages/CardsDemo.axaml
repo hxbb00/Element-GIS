@@ -18,7 +18,7 @@
 			<Style Selector="controls|Card">
 				<Setter Property="Margin" Value="8" />
 			</Style>
-			<Style Selector="controls|Card:pointerover">
+			<Style Selector="controls|FloatingButton.startBtn:pointerover">
 				<Setter Property="RenderTransform" Value="scale(1.02)"/>
 			</Style>
 			<Style Selector="controls|FloatingButton[IsExtended=true]">
@@ -78,12 +78,12 @@
 							</ItemsControl.ItemsPanel>
 							<ItemsControl.ItemTemplate>
 								<DataTemplate>
-									<controls:Card Theme="{StaticResource CardOutset}" Width="250" Height="220" VerticalAlignment="Top" ToolTip.Tip="{Binding Description}">
+									<controls:Card Classes="rootCard" Theme="{StaticResource CardOutset}" Width="250" Height="220" VerticalAlignment="Top" ToolTip.Tip="{Binding Description}">
 										<StackPanel Orientation="Vertical" Margin="8">
 											<Image Source="avares://Element.GIS/Assets/avalonia-logo.png" Width="80" Height="80" Stretch="Uniform" />
 											<StackPanel Margin="8">
 												<TextBlock Classes="Headline6" Text="{Binding Title}" HorizontalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" />
-												<controls:FloatingButton Margin="0,8" Width="120" Height="26" Classes="Dark" IsExtended="True" ToolTip.Tip="点击开始." Command="{Binding ButtonClick}" />
+												<controls:FloatingButton Margin="0,8" Width="120" Height="26" Classes="startBtn Dark" IsExtended="True" ToolTip.Tip="点击开始." Command="{Binding ButtonClick}" />
 											</StackPanel>
 										</StackPanel>
 									</controls:Card>

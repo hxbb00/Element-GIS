@@ -18,7 +18,7 @@ namespace Element.GIS.Plugin.DataConverter
         {
             get
             {
-                return new PanelLoginDemo();
+                return new PanelShp2Geojson();
             }
         }
 

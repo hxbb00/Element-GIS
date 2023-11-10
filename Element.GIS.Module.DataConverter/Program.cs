@@ -1,10 +1,6 @@
-﻿using Element.GIS.Fx;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using CommandLine;
+using Element.GIS.Fx;
+using System.Reflection;
 
 namespace Element.GIS.Plugin.DataConverter
 {
@@ -12,9 +8,21 @@ namespace Element.GIS.Plugin.DataConverter
     {
         public static void Main(string[] args)
         {
+            Parser.Default.ParseArguments<Options>(args).WithParsed(Run);
+        }
+
+        private static void Run(Options option)
+        {
             var grpc = HostGrpcHelper.StartGrpc();
-            grpc.SayHelloAsync().Wait();
+            Run0(option, grpc);
             grpc.Close();
+        }
+
+        private static void Run0(Options option, IHostGrpc hostGrpc)
+        {
+            var field = option.Format.GetType().GetField(option.Format.ToString());
+            var customAttribute = field.GetCustomAttribute<FormatConverterAttribute>();
+            customAttribute?.Convert(option, hostGrpc);
         }
     }
 }

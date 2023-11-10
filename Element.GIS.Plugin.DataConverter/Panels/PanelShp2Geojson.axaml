@@ -1,0 +1,57 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+			xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+			xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
+			xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+			xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels.Panels"
+			x:CompileBindings="True"
+			x:DataType="viewModels:PanelShp2GeojsonViewModel"
+			x:Class="Neumorphism.Avalonia.Demo.Pages.Panels.PanelShp2Geojson">
+
+
+	<StackPanel Margin="30" VerticalAlignment="Top">
+		<controls:Card Width="600" VerticalAlignment="Top" CornerRadius="15" Padding="30" Background="{DynamicResource MaterialDesignLinearGradient1}">
+
+			<StackPanel Margin="0,4" HorizontalAlignment="Stretch">
+				<TextBlock Classes="Headline6" Text="Shp转Geojson" TextAlignment="Center" Foreground="#ff555555" />
+
+				<TextBox Watermark="请选择Shp文件路径" Theme="{StaticResource TextBoxHeader}" Margin="0,40,0,20" Width="520" Height="38" CornerRadius="50"
+						 Text="{Binding ShpPath}"
+						 UseFloatingWatermark="True"
+						 assist:TextFieldAssist.InnerLeftBackground="Transparent"
+						 assist:TextFieldAssist.InnerRightBackground="Transparent"
+						 assist:TextFieldAssist.InnerLeftPadding="10,0,0,0">
+					<TextBox.InnerRightContent>
+						<Button Classes="no-material" Height="38" Width="38" Cursor="Hand"
+								Command="{Binding ButtonSelShpPathClick}" CommandParameter="{Binding $self}">
+							<Button.Content>
+								<icons:MaterialIcon Kind="ContentSave" Width="24" Height="24" />
+							</Button.Content>
+						</Button>
+					</TextBox.InnerRightContent>
+				</TextBox>
+
+				<TextBox Watermark="请选择保存路径" Theme="{StaticResource TextBoxHeader}" Margin="0,20,0,5" Width="520" Height="38" CornerRadius="50"
+						 Text="{Binding GeoJsonPath}"
+						 UseFloatingWatermark="True"
+						 assist:TextFieldAssist.InnerLeftBackground="Transparent"
+						 assist:TextFieldAssist.InnerRightBackground="Transparent"
+						 assist:TextFieldAssist.InnerLeftPadding="10,0,0,0">
+					<TextBox.InnerRightContent>
+						<Button Classes="no-material" Height="38" Width="38" Cursor="Hand"
+								Command="{Binding ButtonSelGeoJsonPathClick}" CommandParameter="{Binding $self}">
+							<Button.Content>
+								<icons:MaterialIcon Kind="ContentSave" Width="24" Height="24" />
+							</Button.Content>
+						</Button>
+					</TextBox.InnerRightContent>
+				</TextBox>
+
+				<Button Width="240" Height="38" Content="开始转换" Margin="0,30,0,40" Command="{Binding ButtonLoginClick}" CommandParameter="{Binding $self}" CornerRadius="50"/>
+			</StackPanel>
+		</controls:Card>
+	</StackPanel>
+</UserControl>

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Element.GIS.Module.DataConverter": {
+      "commandName": "Project",
+      "commandLineArgs": "-f geojson -i \"E:\\GTK\\mapnik-master\\demo\\data\\roads.shp\""
+    }
+  }
+}
